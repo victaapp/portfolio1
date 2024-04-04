@@ -1,0 +1,25 @@
+# Dependency directories
+node_modules/
+
+# Build directory
+build/
+
+# Temporary files
+*.log
+*.tmp
+
+# Environment files
+.env
+
+# IDE and editor files
+.vscode/
+.idea/
+*.iml
+*.ipr
+*.iws
+
+# macOS
+.DS_Store
+
+# Thumbnails
+Thumbs.db
