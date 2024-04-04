@@ -26,7 +26,7 @@ class About extends Component {
               <article className="about__card">
                 <FiUsers className="about__icon" />
                 <h5>Clients</h5>
-                <small>10+ WorldWide</small>
+                <small>5+ WorldWide</small>
               </article>
               <article className="about__card">
                 <FaProjectDiagram className="about__icon" />
