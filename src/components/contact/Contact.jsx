@@ -28,7 +28,7 @@ class Contact extends Component {
       .sendForm(
         "service_cqgufzq",
         "template_hnp2gpv",
-        formData, // Pass formData instead of this.form.current
+          this.form.current,
         "_TdMwjuwArZ0FLOdb"
       )
       .then(
