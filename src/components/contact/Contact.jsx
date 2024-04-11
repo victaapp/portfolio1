@@ -14,10 +14,10 @@ class Contact extends Component {
 
     emailjs
       .sendForm(
-        "YOUR_SERVICE_ID",
-        "YOUR_TEMPLATE_ID",
+        "service_cqgufzq",
+        "template_hnp2gpv",
         this.form.current,
-        "YOUR_USER_ID"
+        "_TdMwjuwArZ0FLOdb"
       )
       .then(
         (result) => {
