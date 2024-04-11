@@ -8,6 +8,7 @@ class Contact extends Component {
   constructor() {
     super();
     this.form = createRef();
+    this.sendEmail = this.sendEmail.bind(this);
   }
   sendEmail(e) {
     e.preventDefault();
