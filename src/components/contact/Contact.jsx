@@ -29,7 +29,8 @@ class Contact extends Component {
         "service_cqgufzq",
         "template_hnp2gpv",
           this.form.current,
-        "_TdMwjuwArZ0FLOdb"
+        "_TdMwjuwArZ0FLOdb",
+        formData
       )
       .then(
         (result) => {
