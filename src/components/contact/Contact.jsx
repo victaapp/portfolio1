@@ -4,20 +4,31 @@ import { MdOutlineEmail } from "react-icons/md";
 import { RiMessengerLine } from "react-icons/ri";
 import { RiWhatsappLine } from "react-icons/ri";
 import emailjs from "@emailjs/browser";
+
 class Contact extends Component {
   constructor() {
     super();
     this.form = createRef();
     this.sendEmail = this.sendEmail.bind(this);
   }
+
   sendEmail(e) {
     e.preventDefault();
+
+    const { name, email, message } = e.target; // Access form fields by name
+
+    const formData = {
+      name: name.value,
+      email: email.value,
+      message: message.value,
+      from_name: name.value // Set from_name to the name value
+    };
 
     emailjs
       .sendForm(
         "service_cqgufzq",
         "template_hnp2gpv",
-        this.form.current,
+        formData, // Pass formData instead of this.form.current
         "_TdMwjuwArZ0FLOdb"
       )
       .then(
@@ -28,8 +39,10 @@ class Contact extends Component {
           console.log(error.text);
         }
       );
+    
     e.target.reset();
   }
+
   render() {
     return (
       <section id="contact">
