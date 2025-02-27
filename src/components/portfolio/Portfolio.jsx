@@ -11,13 +11,13 @@ import port1 from "../../assets/port1.png";
 import port2 from "../../assets/port2.png";
 import port4 from "../../assets/port4.png";
 import port5 from "../../assets/port5.png";
+import port6 from "../../assets/port6.png";
 
 const data = [
   {
     id: 1,
     image: port3,
     title: "Merumesh",
-    github: "https://github.com/",
     demo: "https://www.merumesh.com/"
   },
   {
@@ -44,8 +44,14 @@ const data = [
     id: 5,
     image: port5,
     title: "ILM community public dashboard",
-    github: "https://github.com/inextdeve",
-    demo: "https://inext.dev"
+    demo: "https://www.workervoices.org/worker-voice"
+  },
+
+  {
+    id: 5,
+    image: port6,
+    title: " Comprehensive Exam",
+    demo: "https://www.demo.org/"
   },
   
 ];
@@ -65,9 +71,9 @@ class Portfolio extends Component {
                 </div>
                 <h3>{title}</h3>
                 <div className="portfolio__item-cta">
-                  <a href={github} className="btn" target="_blank">
+                  {/* <a href={github} className="btn" target="_blank">
                     Github
-                  </a>
+                  </a> */}
                   <a href={demo} className="btn btn-primary" target="_blank">
                     Live Demo
                   </a>
