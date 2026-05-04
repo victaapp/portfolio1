@@ -30,7 +30,7 @@ const data = [
   {
     id: 3,
     image: port2,
-    title: "Inclusive Labor Monitoring",
+    title: "Inclusive Labour Monitoring",
     demo: "https://ilm.issarainstitute.org/"
   },
   {

@@ -88,3 +88,53 @@ header {
     display: none;
   }
 }
+
+
+/* General Styles */
+#home {
+  height: 100vh;
+  padding-top: 7rem;
+  overflow: hidden;
+}
+
+/* Responsive styles */
+@media screen and (max-width: 1024px) {
+  #home {
+    height: auto;
+    padding-top: 5rem;
+  }
+
+  .header__container {
+    padding: 2rem;
+  }
+
+  .me2 {
+    width: 90%;
+    margin-top: 3rem;
+    position: static;
+    transform: none;
+    padding: 2rem;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  #home {
+    height: auto;
+    padding-top: 3rem;
+  }
+
+  .header__container {
+    text-align: center;
+    padding: 1rem;
+  }
+
+  .me2 {
+    width: 100%;
+    margin-top: 2rem;
+    padding: 1rem;
+  }
+
+  .scroll__down {
+    display: none;
+  }
+}
