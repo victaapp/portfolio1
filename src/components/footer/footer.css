@@ -44,6 +44,13 @@ footer a {
   margin-bottom: 4rem;
   color: var(--color-bg);
 }
+.footer__contact {
+  margin-bottom: 2rem;
+  color: var(--color-bg);
+}
+.footer__contact small {
+  color: var(--color-bg);
+}
 /* ================ MEDIA QUERIES (SMALL DEVICES) ============= */
 @media screen and (max-width: 600px) {
   .permalinks {

@@ -51,6 +51,9 @@ class Footer extends Component {
         <div className="footer__copyright">
           <small>&copy; Anand Kumar. All rights reserved</small>
         </div>
+        <div className="footer__contact">
+          <small>anand.renjre@gmail.com | +91 8962755855</small>
+        </div>
       </footer>
     );
   }

@@ -54,8 +54,8 @@ class Contact extends Component {
             <div className="contact__option">
               <MdOutlineEmail className="contact__option-icon" />
               <h4>Email</h4>
-              <h5>anand.renjre.dev@gmail.com</h5>
-              <a href="mailto:anand.renjre.dev@gmail.com">Send a message</a>
+<h5>anand.renjre@gmail.com</h5>
+               <a href="mailto:anand.renjre@gmail.com">Send a message</a>
             </div>
             
             <div className="contact__option">

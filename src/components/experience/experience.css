@@ -33,6 +33,46 @@
   margin-top: 6px;
   color: var(--color-primary);
 }
+.experience__work {
+  margin-top: 4rem;
+}
+.experience__work h3 {
+  text-align: center;
+  color: var(--color-primary);
+  margin-bottom: 2rem;
+}
+.experience__timeline {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+.timeline__item {
+  background: var(--color-bg-variant);
+  padding: 2rem;
+  border-radius: 1rem;
+  border: 1px solid transparent;
+  transition: var(--transition);
+}
+.timeline__item:hover {
+  background: transparent;
+  border-color: var(--color-primary-variant);
+}
+.timeline__item h4 {
+  color: var(--color-primary);
+  margin-bottom: 0.5rem;
+  font-size: 1rem;
+}
+.timeline__item small {
+  color: var(--color-light);
+  display: block;
+  margin-bottom: 1rem;
+  font-size: 0.85rem;
+}
+.timeline__item p {
+  color: var(--color-light);
+  font-size: 0.9rem;
+  line-height: 1.6;
+}
 /* ================ MEDIA QUERIES (MEDIUM DEVICES) ============= */
 
 @media screen and (max-width: 1024px) {
@@ -47,6 +87,9 @@
   .experience__content {
     padding: 1rem;
   }
+  .experience__work {
+    margin-top: 2rem;
+  }
 }
 /* ================ MEDIA QUERIES (SMALL DEVICES) ============= */
 @media screen and (max-width: 600px) {
@@ -56,6 +99,12 @@
   .experience__container > div {
     width: 100%;
     padding: 2rem 1rem;
+  }
+  .experience__work {
+    margin-top: 2rem;
+  }
+  .timeline__item {
+    padding: 1.5rem;
   }
 }
 

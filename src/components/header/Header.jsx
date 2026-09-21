@@ -10,11 +10,11 @@ class Header extends Component {
         <div className="container header__container">
           <h5>Hello I'm</h5>
           <h1>Anand Kumar</h1>
-          <div className="text-light">Fullstack Developer</div>
+          <div className="text-light">Software Engineer — Python | Django | AI/GenAI | Full-Stack</div>
           <CTA />
           <div className="me2" >
             <p style={{alignItems:"center"}}>
-            I specialize in crafting high-quality, responsive websites and dynamic web applications that boast clean user interfaces and rich interactive experiences. With expertise spanning both front-end and back-end development, I thrive on leveraging the power of React.js and JavaScript to create engaging user interfaces that captivate and delight users. On the backend, my proficiency lies in Python, Django, and Django Rest Framework, enabling me to architect robust server-side solutions and design RESTful APIs that seamlessly integrate with the frontend. I am well-versed in deploying applications using AWS EC2 and S3, ensuring scalability, reliability, and optimal performance. Whether it's remote freelance opportunities, contract work, or full-time positions, I am eager to tackle new challenges, solve complex problems, and innovate within the realm of web development.
+            Software Engineer with 5 years of experience designing and shipping production-grade Python/Django applications and AI-powered products built on OpenAI, LangChain, and RAG. Full-stack proficiency across Django REST Framework, React.js/Redux, and cloud deployment on AWS (EC2, S3, RDS) and Azure. Delivered fintech reward platforms, GenAI content and auto-grading systems, and cross-border social-impact applications used by NGOs and international clients. Strong track record of API design, code quality, and cross-functional Agile collaboration.
             </p>
           </div>
           <a href="#contact" className="scroll__down">
