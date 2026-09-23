@@ -1,56 +1,69 @@
 import { Component } from "react";
-import { AiOutlineHome } from "react-icons/ai";
-import { AiOutlineUser } from "react-icons/ai";
-import { BiBook } from "react-icons/bi";
+import { AiOutlineHome, AiOutlineUser } from "react-icons/ai";
+import { BiBook, BiMessageSquareDetail } from "react-icons/bi";
 import { RiServiceLine } from "react-icons/ri";
-import { BiMessageSquareDetail } from "react-icons/bi";
+import { HiOutlineSparkles } from "react-icons/hi";
+import { MdOutlineWorkOutline } from "react-icons/md";
 import "./nav.css";
-import { useState } from "react";
+
+const LINKS = [
+  { id: "#home", label: "Home", icon: <AiOutlineHome /> },
+  { id: "#about", label: "About", icon: <AiOutlineUser /> },
+  { id: "#experience", label: "Experience", icon: <BiBook /> },
+  { id: "#services", label: "Services", icon: <RiServiceLine /> },
+  { id: "#projects", label: "Projects", icon: <HiOutlineSparkles /> },
+  { id: "#portfolio", label: "Portfolio", icon: <MdOutlineWorkOutline /> },
+  { id: "#contact", label: "Contact", icon: <BiMessageSquareDetail /> }
+];
 
 class Nav extends Component {
-  constructor() {
-    super();
-    this.state = { active: "#" };
+  constructor(props) {
+    super(props);
+    this.state = { active: "#home" };
+    this.handleScroll = this.handleScroll.bind(this);
+  }
+
+  componentDidMount() {
+    window.addEventListener("scroll", this.handleScroll, { passive: true });
+    this.handleScroll();
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener("scroll", this.handleScroll);
+  }
+
+  // highlight the section currently closest to the top of the viewport
+  handleScroll() {
+    const offset = window.innerHeight * 0.35;
+    let active = LINKS[0].id;
+
+    LINKS.forEach(({ id }) => {
+      const section = document.querySelector(id);
+      if (section && section.getBoundingClientRect().top <= offset) {
+        active = id;
+      }
+    });
+
+    if (active !== this.state.active) {
+      this.setState({ active });
+    }
   }
 
   render() {
     return (
       <nav>
-        <a
-          onClick={() => this.setState({ active: "#" })}
-          className={this.state.active == "#" ? "active" : ""}
-          href="#"
-        >
-          <AiOutlineHome />
-        </a>
-        <a
-          onClick={() => this.setState({ active: "#about" })}
-          className={this.state.active == "#about" ? "active" : ""}
-          href="#about"
-        >
-          <AiOutlineUser />
-        </a>
-        <a
-          onClick={() => this.setState({ active: "#experience" })}
-          className={this.state.active == "#experience" ? "active" : ""}
-          href="#experience"
-        >
-          <BiBook />
-        </a>
-        <a
-          onClick={() => this.setState({ active: "#services" })}
-          className={this.state.active == "#services" ? "active" : ""}
-          href="#services"
-        >
-          <RiServiceLine />
-        </a>
-        <a
-          onClick={() => this.setState({ active: "#contact" })}
-          className={this.state.active == "#contact" ? "active" : ""}
-          href="#contact"
-        >
-          <BiMessageSquareDetail />
-        </a>
+        {LINKS.map(({ id, label, icon }) => (
+          <a
+            key={id}
+            href={id}
+            aria-label={label}
+            title={label}
+            onClick={() => this.setState({ active: id })}
+            className={this.state.active === id ? "active" : ""}
+          >
+            {icon}
+          </a>
+        ))}
       </nav>
     );
   }

@@ -48,9 +48,9 @@ const data = [
   },
 
   {
-    id: 5,
+    id: 6,
     image: port6,
-    title: " Comprehensive Exam",
+    title: "Comprehensive Exam",
     demo: "https://www.demo.org/"
   },
   
@@ -67,14 +67,19 @@ class Portfolio extends Component {
             return (
               <article key={id} className="portfolio__item">
                 <div className="portfolio__item-image">
-                  <img src={image} alt="" />
+                  <img src={image} alt={title} />
                 </div>
                 <h3>{title}</h3>
                 <div className="portfolio__item-cta">
                   {/* <a href={github} className="btn" target="_blank">
                     Github
                   </a> */}
-                  <a href={demo} className="btn btn-primary" target="_blank">
+                  <a
+                    href={demo}
+                    className="btn btn-primary"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
                     Live Demo
                   </a>
                 </div>

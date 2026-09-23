@@ -1,63 +1,125 @@
 .about__container {
   display: grid;
-  grid-template-columns: 35% 50%;
-  gap: 15%;
+  grid-template-columns: 34% 1fr;
+  gap: 6%;
+  align-items: start;
 }
+
 .about__me {
+  position: relative;
   width: 100%;
   aspect-ratio: 1/1;
-  border-radius: 2rem;
-  background: linear-gradient(
-    45deg,
-    transparent,
-    var(--color-primary),
-    transparent
-  );
+  border-radius: var(--radius-xl);
+  background: var(--gradient-primary);
   display: grid;
   place-items: center;
+  padding: 2px;
+  box-shadow: var(--shadow-md);
 }
+
 .about__me-image {
-  border-radius: 2rem;
+  border-radius: calc(var(--radius-xl) - 2px);
   overflow: hidden;
-  transform: rotate(10deg);
+  width: 100%;
+  height: 100%;
+  transform: rotate(6deg) scale(0.94);
   transition: var(--transition);
 }
 .about__me-image:hover {
-  transform: rotate(0);
+  transform: rotate(0) scale(0.98);
 }
+.about__me-image img {
+  height: 100%;
+}
+
 .about__cards {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 1.5rem;
+  gap: 1.2rem;
 }
+
 .about__card {
-  background: var(--color-bg-variant);
-  border: 1px solid transparent;
-  border-radius: 1rem;
-  padding: 2rem;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: 1.6rem 1rem;
   text-align: center;
-  transition: var(--transition);
+  backdrop-filter: blur(12px);
+  transition: var(--transition-fast);
 }
 .about__card:hover {
   border-color: var(--color-primary-variant);
-  background: transparent;
+  background: var(--color-surface-strong);
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-sm);
   cursor: default;
 }
-
 .about__icon {
   color: var(--color-primary);
-  font-size: 1.4rem;
-  margin-bottom: 1rem;
+  font-size: 1.5rem;
+  margin-bottom: 0.8rem;
 }
 .about__card h5 {
   font-size: 0.95rem;
 }
 .about__card small {
-  font-size: 0.7rem;
+  font-size: 0.75rem;
+  color: var(--color-muted);
 }
-.about__content p {
-  margin: 2rem 0 2.6rem;
+
+.about__text {
+  margin: 2rem 0;
   color: var(--color-light);
+  font-size: 0.95rem;
+  line-height: 1.85;
+}
+
+/* ================= EDUCATION ================= */
+.about__education {
+  margin-bottom: 2rem;
+  padding: 1.5rem;
+  border-radius: var(--radius-md);
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  backdrop-filter: blur(12px);
+}
+.about__education h4 {
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+  color: var(--color-primary);
+  font-size: 1rem;
+  margin-bottom: 1.2rem;
+}
+.about__education-list {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.2rem;
+}
+.about__education-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  padding-left: 0.9rem;
+  border-left: 2px solid var(--color-primary-variant);
+}
+.about__education-item strong {
+  font-size: 0.92rem;
+  font-weight: 500;
+}
+.about__education-item span {
+  font-size: 0.85rem;
+  color: var(--color-light);
+}
+.about__education-item small {
+  font-size: 0.78rem;
+  color: var(--color-muted);
+}
+
+.about__cta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
 }
 
 /* ================ MEDIA QUERIES (MEDIUM DEVICES) ============= */
@@ -68,26 +130,43 @@
     gap: 0;
   }
   .about__me {
-    width: 50%;
-    margin: 2rem auto 4rem;
-  }
-  .about__content p {
-    margin: 1rem 0 1.5rem;
-  }
-}
-/* ================ MEDIA QUERIES (SMALL DEVICES) ============= */
-@media screen and (max-width: 600px) {
-  .about__me {
-    width: 65%;
+    width: 55%;
     margin: 0 auto 3rem;
   }
-  .about__cards {
-    grid-template-columns: 1fr 1fr;
-  }
-  .about__content {
-    text-align: center;
-  }
-  .about__content p {
+  .about__text {
     margin: 1.5rem 0;
+  }
+}
+
+/* ================ MEDIA QUERIES (SMALL DEVICES) ============= */
+
+@media screen and (max-width: 600px) {
+  .about__me {
+    width: 72%;
+    margin: 0 auto 2.5rem;
+  }
+  .about__cards {
+    grid-template-columns: 1fr;
+    gap: 0.8rem;
+  }
+  .about__card {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    text-align: left;
+    padding: 1rem 1.2rem;
+  }
+  .about__icon {
+    margin-bottom: 0;
+  }
+  .about__education-list {
+    grid-template-columns: 1fr;
+  }
+  .about__cta {
+    flex-direction: column;
+  }
+  .about__cta .btn {
+    width: 100%;
+    justify-content: center;
   }
 }

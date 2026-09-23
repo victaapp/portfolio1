@@ -1,58 +1,74 @@
 import { Component } from "react";
-import {
-  IoLogoTwitter,
-  IoLogoFacebook,
-  IoLogoInstagram,
-  IoLogoYoutube
-} from "react-icons/io";
+import { BsLinkedin } from "react-icons/bs";
+import { FaGithub } from "react-icons/fa";
+import { IoLogoFacebook } from "react-icons/io";
+import { MdOutlineEmail } from "react-icons/md";
 import "./footer.css";
+
+const LINKS = [
+  { href: "#home", label: "Home" },
+  { href: "#about", label: "About" },
+  { href: "#experience", label: "Experience" },
+  { href: "#services", label: "Services" },
+  { href: "#projects", label: "Projects" },
+  { href: "#portfolio", label: "Portfolio" },
+  { href: "#contact", label: "Contact" }
+];
+
+const SOCIALS = [
+  {
+    href: "https://www.linkedin.com/in/anand-kumar-7a4402135/",
+    label: "LinkedIn",
+    icon: <BsLinkedin />
+  },
+  { href: "https://github.com/arenjre", label: "GitHub", icon: <FaGithub /> },
+  {
+    href: "https://www.facebook.com/renjre/",
+    label: "Facebook",
+    icon: <IoLogoFacebook />
+  },
+  {
+    href: "mailto:anand.renjre@gmail.com",
+    label: "Email",
+    icon: <MdOutlineEmail />
+  }
+];
+
 class Footer extends Component {
   render() {
     return (
       <footer>
-      
+        <a href="#home" className="footer__logo">
+          Anand Kumar
+        </a>
+
         <ul className="permalinks">
-          <li>
-            <a href="#">Home</a>
-          </li>
-          <li>
-            <a href="#about">About</a>
-          </li>
-          <li>
-            <a href="#experience">Experience</a>
-          </li>
-          <li>
-            <a href="#services">Services</a>
-          </li>
-          <li>
-            <a href="#portfolio">Portfolio</a>
-          </li>
-          {/* <li>
-            <a href="#testimonials">Testimonials</a>
-          </li> */}
-          <li>
-            <a href="#contact">Contact</a>
-          </li>
+          {LINKS.map(({ href, label }) => (
+            <li key={href}>
+              <a href={href}>{label}</a>
+            </li>
+          ))}
         </ul>
+
         <div className="footer__social">
-          <a href="https://www.facebook.com/renjre/" target="_blank">
-            <IoLogoFacebook />
-          </a>
-          <a href="https://instagram.com/" target="_blank">
-            <IoLogoInstagram />
-          </a>
-          <a href="https://twitter.com" target="_blank">
-            <IoLogoTwitter />
-          </a>
-          <a href="https://www.youtube.com/" target="_blank">
-            <IoLogoYoutube />
-          </a>
+          {SOCIALS.map(({ href, label, icon }) => (
+            <a
+              key={label}
+              href={href}
+              aria-label={label}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              {icon}
+            </a>
+          ))}
+        </div>
+
+        <div className="footer__contact">
+          <small>anand.renjre@gmail.com &nbsp;|&nbsp; +91 8962755855</small>
         </div>
         <div className="footer__copyright">
-          <small>&copy; Anand Kumar. All rights reserved</small>
-        </div>
-        <div className="footer__contact">
-          <small>anand.renjre@gmail.com | +91 8962755855</small>
+          <small>&copy; {new Date().getFullYear()} Anand Kumar. All rights reserved.</small>
         </div>
       </footer>
     );
