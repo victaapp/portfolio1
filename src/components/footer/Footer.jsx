@@ -17,7 +17,7 @@ const LINKS = [
 
 const SOCIALS = [
   {
-    href: "https://www.linkedin.com/in/anand-kumar-7a4402135/",
+    href: "https://www.linkedin.com/in/anand-renjre-0726b8259/",
     label: "LinkedIn",
     icon: <BsLinkedin />
   },
